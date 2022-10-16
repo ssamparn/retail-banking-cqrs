@@ -5,7 +5,8 @@ import com.eventsourcing.retailbanking.cqrs.usercore.models.response.BaseRespons
 public class RegisteredUserResponse extends BaseResponse {
     private String id;
 
-    public RegisteredUserResponse(String message) {
+    public RegisteredUserResponse(String id, String message) {
         super(message);
+        this.id = id;
     }
 }

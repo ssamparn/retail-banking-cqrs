@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import javax.persistence.Id;
+import javax.validation.Valid;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
@@ -26,6 +27,7 @@ public class User {
     private String lastName;
     @Email(message = "Please provide a valid eMail address")
     private String emailAddress;
+    @Valid
     @NotNull(message = "Please provide account credentials")
     private Account account;
 }

@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.validation.Valid;
 import java.util.UUID;
 
 @Slf4j
@@ -23,15 +24,16 @@ public class RegisterUserRestController {
     private final CommandGateway commandGateway;
 
     @PostMapping
-    public ResponseEntity<RegisteredUserResponse> registerUser(@RequestBody RegisterUserCommand registerUserCommand) {
+    public ResponseEntity<RegisteredUserResponse> registerUser(@Valid @RequestBody RegisterUserCommand registerUserCommand) {
+        String id = UUID.randomUUID().toString();
         try {
-            registerUserCommand.setId(UUID.randomUUID().toString());
+            registerUserCommand.setId(id);
             commandGateway.sendAndWait(registerUserCommand);
-            return new ResponseEntity<>(new RegisteredUserResponse("User successfully registered!"), HttpStatus.CREATED);
+            return new ResponseEntity<>(new RegisteredUserResponse(id, "User successfully registered!"), HttpStatus.CREATED);
         } catch (Exception e) {
-            String safeErrorMessage = "Error while processing register user request for id: " + registerUserCommand.getId();
+            String safeErrorMessage = "Error while processing register user request for id: " + id;
             log.error(safeErrorMessage);
-            return new ResponseEntity<>(new RegisteredUserResponse(safeErrorMessage), HttpStatus.INTERNAL_SERVER_ERROR);
+            return new ResponseEntity<>(new RegisteredUserResponse(id, safeErrorMessage), HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 }

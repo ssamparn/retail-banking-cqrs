@@ -1,4 +1,4 @@
-package com.eventsourcing.retailbanking.cqrs.usercommandapi.security;
+package com.eventsourcing.retailbanking.cqrs.userqueryapi.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -13,10 +13,10 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
-            .authorizeHttpRequests(auth -> auth
-                    .anyRequest().permitAll()
-            )
-            .csrf().disable();
+                .authorizeHttpRequests(auth -> auth
+                        .anyRequest().permitAll()
+                )
+                .csrf().disable();
         return http.build();
     }
 }
