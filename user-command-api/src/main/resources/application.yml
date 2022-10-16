@@ -2,6 +2,8 @@ server:
   port: 8081
 
 spring:
+  main:
+    allow-bean-definition-overriding: true
   data:
     mongodb:
       host: localhost
@@ -9,4 +11,11 @@ spring:
       database: user
       username: root
       password: rootpassword
-      uri: mongodb://root:rootpassword@localhost:27017/user
+      authentication-database: admin
+      uri: mongodb://root:rootpassword@localhost:27017/user?authSource=admin&authMechanism=SCRAM-SHA-1
+
+axon:
+  serializer:
+    general: jackson
+    events: jackson
+    messages: jackson
