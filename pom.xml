@@ -17,6 +17,7 @@
     <modules>
         <module>user-command-api</module>
         <module>user-core</module>
+        <module>user-oauth2.0</module>
         <module>user-query-api</module>
     </modules>
 
