@@ -1,1 +1,22 @@
+server:
+  port: 8000
 
+logging:
+  level:
+    root: INFO
+    org.springframework.web: INFO
+    org.springframework.security: INFO
+    org.springframework.security.oauth2: INFO
+
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: user
+      username: root
+      password: rootpassword
+      authentication-database: admin
+      uri: mongodb://root:rootpassword@localhost:27017/user?authSource=admin&authMechanism=SCRAM-SHA-1

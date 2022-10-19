@@ -1,10 +1,10 @@
-package com.eventsourcing.retailbanking.cqrs.useroauth20;
+package com.eventsourcing.retailbanking.cqrs.useroauth2;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class ApplicationTests {
+class OAuthAuthorisationServerApplicationTests {
 
 	@Test
 	void contextLoads() {
