@@ -13,6 +13,11 @@ spring:
       password: rootpassword
       authentication-database: admin
       uri: mongodb://root:rootpassword@localhost:27017/user?authSource=admin&authMechanism=SCRAM-SHA-1
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://authorization-server:9000
 
 axon:
   serializer:

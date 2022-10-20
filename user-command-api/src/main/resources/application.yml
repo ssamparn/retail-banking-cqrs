@@ -13,29 +13,11 @@ spring:
       password: rootpassword
       authentication-database: admin
       uri: mongodb://root:rootpassword@localhost:27017/user?authSource=admin&authMechanism=SCRAM-SHA-1
-#  security:
-#    oauth2:
-#      client:
-#        registration:
-#          api-client-oidc:
-#            provider: spring
-#            clientId: user-client
-#            clientSecret: secret
-#            authorizationGrantType: authorization_code
-#            redirectUri: "http://127.0.0.1:8080/login/oauth2/code/{registrationId}"
-#            scope: openid
-#            clientName: api-client-oidc
-#          api-client-authorization-code:
-#            provider: spring
-#            clientId: user-client
-#            clientSecret: secret
-#            authorizationGrantType: authorization_code
-#            redirectUri: "http://127.0.0.1:8080/authorized"
-#            scope: api.read
-#            clientName: api-client-authorization-code
-#        provider:
-#          spring:
-#            issuerUri: http://authorization-server:9000
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://authorization-server:9000
 
 axon:
   serializer:
