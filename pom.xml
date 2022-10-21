@@ -15,6 +15,7 @@
     </properties>
 
     <modules>
+        <module>user-api-gateway</module>
         <module>user-command-api</module>
         <module>user-core</module>
         <module>user-oauth2.0</module>
