@@ -17,6 +17,7 @@
     <modules>
         <module>bank-account-command-api</module>
         <module>bank-account-query-api</module>
+        <module>bank-account-core</module>
         <module>user-api-gateway</module>
         <module>user-command-api</module>
         <module>user-core</module>

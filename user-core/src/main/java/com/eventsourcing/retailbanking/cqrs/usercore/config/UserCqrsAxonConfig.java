@@ -12,7 +12,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-public class AxonConfig {
+public class UserCqrsAxonConfig {
 
     @Bean
     public EmbeddedEventStore eventStore(EventStorageEngine storageEngine,

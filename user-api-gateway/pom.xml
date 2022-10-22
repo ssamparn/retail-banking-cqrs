@@ -11,9 +11,9 @@
 
 	<groupId>com.eventsourcing.retail-banking.cqrs</groupId>
 	<artifactId>user-api-gateway</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0</version>
 	<name>user-api-gateway</name>
-	<description>Demo project for Spring Boot</description>
+	<description>API Gateway for Retail Banking CQRS Project</description>
 
 	<properties>
 		<java.version>11</java.version>

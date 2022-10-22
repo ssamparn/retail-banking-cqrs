@@ -13,7 +13,7 @@
 	<groupId>com.eventsourcing.retail-banking.cqrs</groupId>
 	<artifactId>bank-account-query-api</artifactId>
 	<version>1.0.0</version>
-
+    <packaging>jar</packaging>
 	<name>bank-account-query-api</name>
 	<description>Bank Account Query API</description>
 
@@ -38,7 +38,17 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-
+		<dependency>
+			<groupId>org.axonframework</groupId>
+			<artifactId>axon-spring-boot-starter</artifactId>
+			<version>4.6.1</version>
+			<exclusions>
+				<exclusion>
+					<groupId>org.axonframework</groupId>
+					<artifactId>axon-server-connector</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
@@ -46,8 +56,8 @@
 			<optional>true</optional>
 		</dependency>
 		<dependency>
-			<groupId>com.h2database</groupId>
-			<artifactId>h2</artifactId>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
 			<scope>runtime</scope>
 		</dependency>
 		<dependency>
@@ -64,6 +74,11 @@
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-test</artifactId>
 			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.eventsourcing.retail-banking.cqrs</groupId>
+			<artifactId>bank-account-core</artifactId>
+			<version>1.0.0</version>
 		</dependency>
 	</dependencies>
 
